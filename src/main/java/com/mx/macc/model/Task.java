@@ -3,6 +3,7 @@ package com.mx.macc.model;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -20,10 +21,8 @@ public class Task implements Serializable {
     private Long id;
 
     @Getter @Setter
+    @NotEmpty(message = "*Please provide an email")
     private String description;
-
-    @Getter @Setter
-    private Integer status;
 
     @Getter @Setter
     @Column(name="creation_date")
